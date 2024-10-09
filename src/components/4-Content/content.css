@@ -1,0 +1,111 @@
+.contact-us {
+  .upper-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    h1 {
+      color: var(--title);
+      margin-bottom: 1rem;
+      .message {
+        color: var(--sub-title);
+        margin-right: 5px;
+      }
+    }
+    p {
+      color: var(--sub-title);
+    }
+  }
+  .data {
+    .left-section {
+      flex-grow: 1;
+      form {
+        display: flex;
+        flex-direction: column;
+        label {
+          padding-bottom: 15px;
+          color: var(--sub-title);
+          margin-right: 10px;
+        }
+        .email input,
+        .message textarea {
+          background-color: var(--sections-bg);
+          border: none;
+          border: 2px solid var(--border);
+          border-radius: 6px;
+          padding: 0.5rem;
+          margin-bottom: 1rem;
+          width: 300px;
+          color: white;
+          &:focus {
+            outline: none;
+            border-color: var(--green);
+            caret-color: var(--green);
+          }
+        }
+        .message textarea {
+          resize: none;
+          height: 200px;
+        }
+        .submit {
+          input {
+            background-color: var(--sections-bg);
+            border: none;
+            border: 2px solid var(--border);
+            border-radius: 6px;
+            padding: 0.5rem 1rem;
+            color: var(--sub-title);
+            cursor: pointer;
+            font-weight: bold;
+            width: 300px;
+            margin-left: 116px;
+            &:hover {
+              color: var(--green);
+            }
+          }
+        }
+      }
+    }
+    .right-section {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .Lottie {
+        width: 350px;
+      }
+    }
+  }
+}
+.light .contact-us .data form .submit input {
+  background-color: var(--title);
+  color: #fff;
+}
+@media (max-width: 992px) {
+  .upper-section {
+    text-align: center;
+  }
+  .data {
+    form {
+      .email,
+      .message,
+      .submit {
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+    }
+  }
+
+  .right-section {
+    .Lottie {
+      display: none;
+    }
+  }
+}
+@media (max-width: 576px) {
+  .email,
+  .message,
+  .submit {
+    width: 200px;
+  }
+}

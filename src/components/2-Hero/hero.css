@@ -1,0 +1,57 @@
+.hero {
+  flex-wrap: wrap;
+  .content {
+    flex-grow: 1;
+    max-width: 600px;
+    .image {
+      img {
+        width: 4rem;
+        height: 4rem;
+        margin-bottom: 2rem;
+        border: 1px solid darkorange;
+        border-radius: 50%;
+      }
+    }
+    .data {
+      h1 {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+        color: var(--title);
+      }
+      p {
+        color: var(--sub-title);
+        font-size: 1rem;
+        line-height: 1.7;
+        margin-bottom: 2rem;
+      }
+      .social {
+        font-size: 1.3rem;
+        .twitter,
+        .instagram,
+        .github,
+        .linkedin {
+          color: var(--sub-title);
+          width: 2.4rem;
+          height: 2.4rem;
+          transition: 0.2s;
+          &:hover {
+            color: var(--title);
+          }
+        }
+      }
+    }
+  }
+  .right-section {
+    .Lottie {
+      width: 350px;
+      translate: 100px 55px;
+    }
+  }
+}
+@media (max-width: 1200px) {
+  .hero {
+    .right-section {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,126 @@
+header {
+  justify-content: space-between;
+  margin-top: 1.3rem;
+  padding: 0 5rem;
+  .menu,
+  .moon,
+  .sun {
+    background-color: var(--sections-bg);
+    border: 1px solid rgba(250, 128, 114, 0.251);
+    border-radius: 50%;
+    width: 2.4rem;
+    height: 2.4rem;
+    color: var(--sub-title);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: 0.2s;
+    &:hover {
+      color: var(--title);
+      border-color: rgba(250, 128, 114, 0.553);
+    }
+  }
+  .sun {
+    color: var(--green);
+    &:hover {
+      color: var(--title);
+      border-color: salmon;
+    }
+  }
+  .menu {
+    display: none;
+  }
+  nav {
+    background-color: var(--sections-bg);
+    box-shadow: 1px 1px 40px #2323242a;
+    padding: 0.6rem 1.6rem;
+    border: 1px solid var(--border);
+    border-radius: 3rem;
+    ul {
+      gap: 1.3rem;
+      li {
+        a {
+          opacity: 0.9;
+          font-size: 0.9rem;
+          font-weight: 500;
+          color: var(--title);
+          &:hover,
+          &:focus {
+            opacity: 1;
+            color: var(--green);
+          }
+        }
+      }
+    }
+  }
+  .fixed {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(6px);
+    ul {
+      background-color: var(--secondary-color);
+      width: 85%;
+      border: 2px solid var(--border);
+      border-radius: 1rem;
+      margin: 2rem auto;
+      padding: 1rem 2rem;
+      animation: mymove 0.8s 1;
+      li {
+        padding: 1rem;
+        &:not(:last-child) {
+          border-bottom: 1px solid var(--border);
+        }
+        &:first-child {
+          text-align: right;
+          padding-bottom: 0;
+          padding-top: 0.2rem;
+          border: none;
+          button {
+            .close {
+              font-size: 1.3rem;
+              color: var(--sub-title);
+              transition: 0.3s;
+              &:hover {
+                font-size: 1.6rem;
+                color: crimson;
+              }
+            }
+          }
+        }
+        a {
+          opacity: 0.9;
+          font-size: 0.9rem;
+          font-weight: 500;
+          color: var(--title);
+          &:hover,
+          &:focus {
+            opacity: 1;
+            color: var(--green);
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  header.flex nav {
+    display: none;
+  }
+  header.flex button.menu {
+    display: block;
+  }
+}
+@keyframes mymove {
+  0% {
+    scale: 0;
+  }
+  60% {
+    scale: 1.2;
+  }
+  100% {
+    scale: 1;
+  }
+}

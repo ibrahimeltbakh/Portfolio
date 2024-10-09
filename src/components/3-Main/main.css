@@ -1,0 +1,125 @@
+.main {
+  gap: 3rem;
+  align-items: start !important;
+  overflow: hidden;
+  .left-section {
+    flex-direction: column;
+    button {
+      background-color: var(--sections-bg);
+      color: var(--title);
+      width: 10rem;
+      padding: 1rem;
+      margin-bottom: 0.5rem;
+      text-align: center;
+      opacity: 0.8;
+      border-radius: 6px;
+      transition: 0.3s;
+      &.active,
+      &:hover {
+        opacity: 1;
+        border: 1px solid var(--green);
+      }
+    }
+  }
+  .right-section {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 0.8rem;
+    padding: 0.5rem;
+    .card {
+      background-image: linear-gradient(
+        rgba(255, 255, 255, 0.05),
+        rgba(255, 255, 255, 0.05)
+      );
+      border: 1px solid #2a689430;
+      border-radius: 6px;
+      transition: 0.3s;
+      &:hover {
+        border: 1px solid var(--green);
+        scale: 1.01;
+        rotate: 1deg;
+        cursor: pointer;
+        .data {
+          opacity: 1;
+        }
+      }
+      .image {
+        overflow: hidden;
+        margin-bottom: 1rem;
+        img {
+          border-radius: 6px;
+          width: 100%;
+        }
+      }
+      .data {
+        opacity: 0.8;
+        padding: 8px;
+        h2 {
+          color: var(--title);
+          margin-bottom: 1rem;
+        }
+        p {
+          color: var(--sub-title);
+        }
+      }
+      .content {
+        justify-content: space-between;
+        padding: 1rem 0.5rem;
+        font-size: 1.3rem;
+        .links {
+          display: flex;
+          gap: 10px;
+        }
+        .links {
+          a {
+            .link,
+            .github {
+              color: var(--sub-title);
+              &:hover {
+                color: var(--title);
+              }
+            }
+          }
+        }
+        .more {
+          a {
+            color: var(--sub-title);
+            .arrow {
+              font-size: 1.1rem;
+              margin: 0 7px;
+            }
+            &:hover {
+              color: var(--green);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.light .main {
+  .left-section {
+    button {
+      background-color: var(--title);
+      color: white;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .main {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    .left-section {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      text-align: center;
+      button {
+        margin: 5px;
+        width: 7rem;
+      }
+    }
+  }
+}
